@@ -1,0 +1,94 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoints;
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+
+.search {
+  display: flex;
+  justify-content: center;
+  background-color: $lightblue;
+  &__body {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: none;
+    padding: 0.8rem 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+    width: 25%;
+    border-radius: 2rem;
+  }
+}
+
+.select {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: none;
+  color: rgb(147, 147, 147);
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  margin: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.wrapper {
+  color: $darkblue;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 16rem));
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px $secondary-white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: tranform 200ms ease-in;
+
+  &__img {
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    margin: 0;
+    text-align: center;
+    padding: 1rem;
+  }
+  &__location {
+    margin: 0;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  &__fave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__button {
+    color: $darkblue;
+    padding: 1rem;
+    margin: 1rem;
+    font-weight: 700;
+    width: 90%;
+    border: 2px solid $secondary-white;
+    background: transparent;
+    border-radius: 4rem;
+    transition: background 0.2s ease-in, color 0.2s ease-in;
+    &:hover {
+      transform: scale(1);
+      background-color: #1d2d3d;
+      color: $primary-white;
+    }
+  }
+  &__btn-fav {
+    border: none;
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+  }
+}

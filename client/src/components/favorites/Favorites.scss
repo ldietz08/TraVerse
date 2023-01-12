@@ -1,0 +1,33 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoints;
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+
+.favorites {
+  color: $darkblue;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 16rem));
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  &__wrapper {
+    height: 120vh;
+  }
+  &__btn {
+    width: 100vw;
+    color: $primary-white;
+    background-color: $lightblue;
+    padding: 1rem 0;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $darkblue;
+      transition: 0.2s ease-in-out;
+    }
+  }
+  &__msg {
+    line-height: 3rem;
+  }
+}

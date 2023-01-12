@@ -1,0 +1,44 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoints;
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+
+.hero {
+  height: 95vh;
+  background-image: url(../../assets/images/whitewater.JPG);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  &__link {
+    text-decoration: none;
+  }
+  &__title {
+    text-shadow: 0 6px 2px rgba(0, 0, 0, 0.3);
+    color: $darkblue;
+    margin: 0;
+    font-size: 3rem;
+    padding-top: 12rem;
+    letter-spacing: 0.5rem;
+    animation: 3.5s fadeup ease-out;
+  }
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    20% {
+      opacity: 0.2;
+    }
+    50% {
+      color: $primary-white;
+      opacity: 1;
+      transform: translateY(0%);
+      letter-spacing: 2rem;
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+      letter-spacing: 0.5rem;
+    }
+  }
+}

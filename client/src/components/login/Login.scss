@@ -1,0 +1,66 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoints;
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+
+.login {
+  &__title {
+    color: $primary-white;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    background-image: url("../../assets/images/mtn2.jpg");
+    background-position: 10%;
+    background-size: cover;
+  }
+  &__form {
+    border-radius: 4px;
+    &-text {
+      color: $primary-white;
+    }
+  }
+  &__container,
+  &__form {
+    background-color: $darkblue;
+    box-shadow: 6px 5px 5px #000000;
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-label {
+      color: $primary-white;
+      text-align: left;
+      padding: 0.25rem 0;
+    }
+    &-body {
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      outline: 1px solid $darkblue;
+      border: none;
+      width: 16vw;
+    }
+    &-btn {
+      border: none;
+      color: $primary-white;
+      background-color: $lightblue;
+      width: 16vw;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0.5rem;
+      border-radius: 3rem;
+      cursor: pointer;
+      &--signup {
+        border: none;
+        cursor: pointer;
+        color: $primary-white;
+        background-color: $lightblue;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        border-radius: 3rem;
+        width: 8vw;
+      }
+    }
+  }
+}

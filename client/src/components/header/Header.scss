@@ -1,0 +1,48 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoints;
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: $darkblue;
+  height: 100px;
+  border-bottom: 2px solid $orange;
+  &__logo {
+    height: 6rem;
+    width: 8rem;
+  }
+}
+
+.navBar {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-bottom: 1.5rem;
+  }
+  &__list-item {
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 1rem;
+      &:hover {
+        color: $lightblue;
+        transition: 0.2s ease;
+    }
+  }
+  &__list-link {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  &__auth {
+    border-radius:0.75rem;
+    background-color: $lightblue;
+    margin-right: 2rem;
+    padding: 0.8rem 2rem;
+    &:hover {
+      color: $primary-white;
+    }
+  }
+}

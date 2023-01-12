@@ -1,0 +1,85 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/breakpoints" as breakpoints;
+@use "../../styles/partials/resets";
+@use "../../styles/partials/fonts";
+
+.information {
+  background-color: $darkblue;
+  padding-top: 1rem;
+}
+.info {
+  color: $darkblue;
+  background-color: $secondary-white;
+  margin-left: 1rem;
+  padding: 6rem 2rem;
+  &__container {
+    display: flex;
+  }
+  &__wrapper {
+    padding: 0 2rem;
+  }
+  &__map {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: $darkblue;
+  }
+  &__img {
+    max-width: 50rem;
+    border-radius: 4px;
+    &-map {
+      max-width: 55rem;
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  &__location {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  &__details {
+    display: flex;
+    justify-content: center;
+    &--bold {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  &__difficulty,
+  &__length {
+    margin-right: 2.5rem;
+  }
+  &__season {
+    margin-bottom: 0;
+  }
+  &__season,
+  &__location,
+  &__heading {
+    text-align: center;
+  }
+  &__rating {
+    margin-top: 2rem;
+    width: 12rem;
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &__text {
+    text-shadow: 0 4px 2px rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    margin: 1rem 2rem;
+    background-color: $lightblue;
+    color: $secondary-white;
+    border-radius: 4px;
+    line-height: 2.2rem;
+    font-size: 1.2rem;
+  }
+}
