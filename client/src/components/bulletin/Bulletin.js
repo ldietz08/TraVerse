@@ -1,9 +1,7 @@
 import "./Bulletin.scss";
 import Message from "../message-modal/Message";
 import { useState, useEffect, useRef } from "react";
-import { collection } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import lottie from "lottie-web";
 import { db } from "../../firebase/Firebase";
 import User from "../../assets/icons/user.png";
@@ -15,51 +13,13 @@ import Envelope from "../../assets/icons/envelope.svg";
 import Trash from "../../assets/icons/trash-can.svg";
 
 const Bulletin = ({ isAuth }) => {
-  const [userName, setUserName] = useState("");
-  const [hikeName, setHikeName] = useState("");
-  const [userMessage, setUserMessage] = useState("");
+  const [newName, setNewName] = useState("");
+  const [newHike, setNewHike] = useState("");
+  const [newPost, setNewPost] = useState("");
   const [users, setUsers] = useState([]);
   const [openMessage, setOpenMessage] = useState(false);
-  const usersCollectionRef = collection(db, "users");
   const navigate = useNavigate();
   const container = useRef(null);
-  const BACK_END_URL = `${process.env.REACT_APP_BACKEND_URL}`;
-
-  const addPost = () => {
-    axios
-      .post(BACK_END_URL, {
-        userName: userName,
-        hikeName: hikeName,
-        userMessage: userMessage,
-      })
-      .then(() => {
-        alert("SUCCESS!");
-      });
-  };
-
-  // const deletePost = async (id) => {
-  //   const userDoc = doc(db, "users", id);
-  //   await deleteDoc(userDoc);
-  // };
-
-  // useEffect(() => {
-  //   const getUsers = async () => {
-  //     const data = await getDocs(usersCollectionRef);
-  //     setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-  //   getUsers();
-  // }, [deletePost]);
-
-  // const addPost = async (e) => {
-  //   e.preventDefault();
-  //   await addDoc(usersCollectionRef, {
-  //     name: newName,
-  //     hike: newHike,
-  //     post: newPost,
-  //   });
-  //   const form = document.querySelector(".form");
-  //   form.reset();
-  // };
 
   // useEffect(() => {
   //   if (!isAuth) {
@@ -89,27 +49,25 @@ const Bulletin = ({ isAuth }) => {
                 className="bulletin__input"
                 placeholder="Enter your name"
                 onChange={(e) => {
-                  setUserName(e.target.value);
+                  setNewName(e.target.value);
                 }}
               />
               <input
                 className="bulletin__input"
                 placeholder="Hike (optional)"
                 onChange={(e) => {
-                  setHikeName(e.target.value);
+                  setNewHike(e.target.value);
                 }}
               />
               <input
                 className="bulletin__input-body"
                 placeholder="Have something to share with the community?"
                 onChange={(e) => {
-                  setUserMessage(e.target.value);
+                  setNewPost(e.target.value);
                 }}
               />
               <div className="btn__wrapper">
-                <button className="btn" onClick={addPost}>
-                  Post
-                </button>
+                <button className="btn">Post</button>
               </div>
             </form>
           </div>

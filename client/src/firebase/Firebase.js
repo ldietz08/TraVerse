@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: `${process.env.apiKey}`,
+  apiKey: "AIzaSyBHqtyO7YFNa0ht4JUbX9N32lKyNuS2aH4",
   authDomain: `${process.env.authDomain}`,
   projectId: `${process.env.projectId}`,
   storageBucket: `${process.env.storageBucket}`,
@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export default app;
 
-export const db = getFirestore(app);
+// export const db = getFirestore(app);
 
 export function signup(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);

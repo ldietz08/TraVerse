@@ -32,7 +32,7 @@ app.get("/", (_req, res) => {
 });
 
 app.get("/feed", (req, res) => {
-  const q = "SELECT * FROM feed";
+  const q = "SELECT * FROM bulletin_feed";
   db.query(q, (err, result) => {
     if (err) return res.json(err);
     return res.json(result);
