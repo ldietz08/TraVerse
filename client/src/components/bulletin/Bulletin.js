@@ -57,7 +57,7 @@ const Bulletin = ({ isAuth }) => {
     } catch (err) {
       console.log(err);
     }
-    deletePost()
+    deletePost();
   };
 
   useEffect(() => {
