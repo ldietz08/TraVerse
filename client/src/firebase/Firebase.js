@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBHqtyO7YFNa0ht4JUbX9N32lKyNuS2aH4",
+  apiKey: `${process.env.apiKey}`,
   authDomain: `${process.env.authDomain}`,
   projectId: `${process.env.projectId}`,
   storageBucket: `${process.env.storageBucket}`,
