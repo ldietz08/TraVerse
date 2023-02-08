@@ -2,8 +2,8 @@ const mysql = require("mysql");
 
 const db = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "rootroot",
+  user: `${process.env.user}`,
+  password: `${process.env.password}`,
   database: "TraVerseDB",
 });
 

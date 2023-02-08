@@ -23,4 +23,5 @@
 - Sass
 - Node.js
 - Express.js
-- Firebase 
+- Firebase
+- MySQL 
