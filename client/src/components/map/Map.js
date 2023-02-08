@@ -5,7 +5,7 @@ import "./Map.scss";
 const Map = () => {
   const center = useMemo(() => ({ lat: 49.246292, lng: -123.116226 }), []);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBdeLTPA7M5ggjCLI5mgwZOr1bwwcyQhcc",
+    googleMapsApiKey: `${process.env.googleMapsApiKey}`,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
